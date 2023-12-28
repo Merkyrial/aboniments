@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Тренировки на батутах</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="26e21d97-80f6-4f1d-925f-a0940c700822" class="page sans"><header><img class="page-cover-image" src="%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D0%B0%D1%82%D1%83%D1%82%D0%B0%D1%85%2026e21d9780f64f1d925fa0940c700822/0jqs5rwq.png" style="object-position:center 74.32000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/stars_gray.svg"/></div><h1 class="page-title">Тренировки на батутах</h1><p class="page-description"></p></header><div class="page-body"><h2 id="2c753743-c52d-407f-9e98-b030e314fa83" class="block-color-default">Для начала представлюсь:</h2><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="a656600a-f4da-4cda-97d6-fd4dd4efbadd"><div style="font-size:1.5em"><span class="icon">✨</span></div><div style="width:100%"><em><strong>Здравствуйте, меня зовут Юрий, мне 20 лет и… я акробат </strong></em><p id="5673389f-c1a3-426e-9640-a82ab2c5f78d" class=""><em><strong>по совместительству тренер по прыжкам на батутах(ну и немного программист)</strong></em></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="483b347b-c8d5-4515-83c1-1256257795dc"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><mark class="highlight-gray_background"><strong>Я занимаюсь этим видом спорта уже 7 лет из них 2,5 года тренерской деятельности, и мне есть что рассказать))</strong></mark></div></figure></div></figure><h3 id="67e5c6b0-1aa7-48bd-bc3f-25a778640963" class="">Начну с сути , почему стоит попробовать себя в акробатике и прыжках на батуте? </h3><p id="28f1fac9-0dd9-4ee0-a6be-301578d3f0a9" class=""><strong>А так же хотелось бы развеять тройку мифов:</strong></p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Миф №1</summary><div class="indented"><p id="1e763578-2e9e-436d-a4d0-ea7feff21ad0" class="">Батуты - это скучное и однообразное времяпрепровождение. Прыгаешь вверх-вниз и все. Хотим развеять данную теорию и сказать, что сейчас батуты используют не просто для прыжков!</p><p id="d2c4904e-12b7-48d7-9120-9c12560480c2" class="">Современные батуты – это место, где каждый может заниматься фитнесом, гимнастикой и акробатикой. Также существуют командные игры на батутах, например, слэмбол (вид баскетбола).</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Миф №2</summary><div class="indented"><p id="d273735d-6ee2-4c9a-8597-221215a7323c" class="">Батуты имеют опасность для жизни и здоровья, так как человек испытывает мощную перегрузку.</p><p id="d0d67f8e-2df8-48e9-8f36-59e039b67ff5" class="">Несколько лет назад о таком «эффекте» упомянули тогда, когда узнали, что космонавты стали тренироваться на батуте. Это возможность за короткий период почувствовать переход от физической нагрузки до невесомости. Это не значит,что вы будете испытывать перегрузку, с которой не сможет справиться обычный организм. Прыжки на батуте — упрощенный и самый безопасный вариант для занятия спортом, чем, например, бег на стадионе.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Миф №3</summary><div class="indented"><p id="88cd6976-fde6-43bf-9015-5bc6295db8bb" class="">Батуты отрицательно влияют на систему пищеварения.</p><p id="a064ff53-65ed-4631-9366-78a6a3952d17" class="">Этот миф придуман теми, кто любит плотно поесть.</p><p id="7166bfb0-cd87-49f8-aac3-dbd79401eb55" class="">Любые физические нагрузки выполнять на полный желудок запрещается!</p><p id="c191e9a6-50c4-4e7b-9702-3ff9d38eaa19" class="">Инструкторы советуют посещать занятия на батуте только через 1-2 часа после еды. Если вы будете соблюдать такое правило, то вы точно не причините вред своему организму.</p><blockquote id="01bb32fd-0964-4520-ba13-f8e77e9a51e9" class="">Если у вас остались какие-либо сомнения и вопросы, то не стесняйтесь и пишите нам! Мы обязательно вас проконсультируем!</blockquote></div></details><h3 id="336fe656-9894-49c3-9c11-92c32eced1a5" class="">И все таки почему же стоит попробовать?</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5f2a39f8-9426-48b8-8b8e-5bf8bc938fcd"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><strong>Увлекательный и доступный</strong> <strong>вид спорта.</strong> Прыгать на батуте очень нравится и детям, и взрослым(<em>да-да занятия и даже просто прыжки на батуте, далеко не только для детей)</em>. Мне с детства очень нравилась акробатика, но в моем городе не было возможности заниматься, да и даже просто батутных залов не было(<em>кроме надувных конечно, но это другая история</em>), теперь возможностей гораздо больше, и подобные мечты осуществить теперь легко.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9ccaf5b3-ecc0-483b-890b-e40362172e8c"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><strong>Отличная эмоциональная разгрузка.</strong> Прыжки на батуте — это источник ярких положительных впечатлений. Взрослые, находясь на батуте, радуются так же, как и дети. Они получают возможность хорошо эмоционально разгрузиться, забыть о насущных проблемах и получить абсолютно новые ощущения, такие как чувство свободы, полета и управления своим телом.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8f0ab78e-d9e9-4af0-b106-117ca35f62c5"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><strong>Подходят для людей любого телосложения и физической подготовки.</strong> На батуте могут прыгать все, у кого нет следующих противопоказаний по здоровью: <em>плохой вестибулярный аппарат(очень плохой), болезни спины, запрещены тренировки на выносливость.</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c78991b2-eb49-4f45-b083-d896b725c39f"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><strong>Силовая и кардионагрузка в совокупности с выполнением сложно-координационных упражнений. </strong>Основные факторы тренировки, которые требуются для поддержания хорошей физической формы взрослым людям. Прыжки на батуте обеспечивают их одновременно и в полной мере.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bfd20278-f612-41d8-a321-39f6118c275d"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%">Несложный, но очень эффективный вид спорта <strong>для поддержания физической формы и коррекции фигуры</strong>. Прыжки на батуте отлично развивают все группы мышц и вестибулярный аппарат, тренируют координацию, выносливость, способствуют быстрому похудению. Во время тренировки вы получаете большую физическую нагрузку, но практически этого не замечаете.</div></figure><h3 id="eb9c0c5c-6183-451f-bcd8-40bb7c6dffa3" class="">НО, есть и минусы</h3><p id="1088c864-9c61-4cb8-a742-5ab21137b7f9" class=""><mark class="highlight-gray_background"><em>Самый большой минус, нужно что то делать))</em></mark></p><h3 id="50c25df3-66b4-4290-8dad-d6e8b484d898" class="">Но если без шуток минусы и правда есть:</h3><ul id="73402571-8efa-4a32-962a-9abb33c0a06b" class="bulleted-list"><li style="list-style-type:disc"><strong>Требуется время на адаптацию организма к батуту.</strong> Точнее, нужна адаптация вестибулярного аппарата. Первое время может кружиться голова, может тошнить, все это очень индивидуально. Но дети и большая часть взрослых с такими проблемами не сталкиваются, но шансы есть.</li></ul><ul id="05cdd8ce-8732-4cf6-a128-44ab89cf3fbd" class="bulleted-list"><li style="list-style-type:disc"><strong>Травмоопасный вид спорта.</strong> Батут — очень коварный снаряд для тех, кто не умеет на нем правильно прыгать, поэтому занятия должны проходить только в сопровождении тренера, иначе есть большой риск получить травму. Находясь в батутном зале, обязательно надо соблюдать правила безопасности, о которых  я вам расскажу с самого начала .</li></ul><p id="a5ab505b-a9c3-41f5-a981-a2463991ffbe" class="">
+</p><p id="d3608b96-c0b3-460b-82be-7ea6ace0d7f1" class="">
+</p><p id="b0202af7-5a16-4728-88c7-6c9a8f8e28ae" class="">
+</p><h2 id="bfa7add6-0645-47a6-8320-c99977b7a44c" class="">Какой должна быть полезная тренировка на батутах?</h2><blockquote id="ff17f4c9-28b4-4fef-aaa7-e3054c31cb32" class=""><mark class="highlight-gray_background"><strong>Если вы планируете регулярно заниматься прыжками на батуте с целью поддержания физической формы да и в целом  вы должны знать, как правильно строится такая тренировка.</strong></mark> <figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="885ba8fc-f313-4eda-ba9c-8433d4097063"><div style="font-size:1.5em"><span class="icon">💫</span></div><div style="width:100%">Она должна состоять из качественной разминки, изучения базовых акробатических элементов  и только затем — трюков и сальто на батуте. Завершается тренировка растяжкой , подкачкой всех групп мышц, связок ног и различных суставов.</div></figure></blockquote><p id="682ee0f5-3ad5-4e1f-a93d-9baf20c8c4c0" class="">В целом это этапы хорошей тренировки, но даже тут есть и <em><span style="border-bottom:0.05em solid">своя иерархия</span></em></p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Мой метод тренировок основан на уровне и поэтапном совершенствовании навыков. </summary><div class="indented"><p id="28d6fdf2-1944-43cb-b1a5-783aebca8751" class="">Существуют разные системы уровней, но я выбрал эту:</p><div id="53cc76ce-aba8-4d20-8234-2b919215726a" class="column-list"><div id="2f614b9a-0248-4faf-85e0-5e71f71fb045" style="width:46.666666666666664%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="39c3cf6e-b5e4-4579-8000-e2339eaef529"><div style="font-size:1.5em"><span class="icon">1️⃣</span></div><div style="width:100%"> <em><strong> </strong></em><em><span style="border-bottom:0.05em solid"><strong>1 уровень</strong></span></em><div id="6af517dd-d4dd-46e7-a0aa-86e888c06546" class="column-list"><div id="7d181781-a645-4aaa-89bb-26a0ee93da0c" style="width:100%" class="column"><ul id="06219497-26cf-4868-8ddd-4525bab99cb7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">прыжок в группировке</span><div class="indented"></div></li></ul><ul id="d5adef9c-77ae-4a7f-9adb-8928391c7da7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">прыжок на 360</span><div class="indented"></div></li></ul><ul id="bf181c81-313d-40e7-98ff-bedab2e6f7a2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Прыжок в сед</span><div class="indented"></div></li></ul><ul id="010d0d90-bf04-446e-9628-d3ecbb7d2873" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Прыжок на спину </span><div class="indented"></div></li></ul><ul id="1efeff07-e73f-4acc-8f55-f6ea42fd31a8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Прыжок в живот</span><div class="indented"></div></li></ul><ul id="9c2e59de-4ca4-4095-afd7-bddff0699de6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Сед 180 Сед</span><div class="indented"></div></li></ul><ul id="9bd7f689-a145-49a3-a04d-bff6d092d2d0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Спина живот</span><div class="indented"></div></li></ul><ul id="61a475ec-da17-40b7-ab0a-c8d60ddf4e4f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Прыжки с набором высоты на спине</span><div class="indented"></div></li></ul><ul id="ca8f370f-379b-4db1-b4d4-b01144c9b79e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">живот 180 живот</span><div class="indented"></div></li></ul></div><div id="e1d9ba58-c111-4f2a-b091-0d74b1cc260f" style="width:100%" class="column"><ul id="98e80ccb-c3be-40fc-9c4a-78a8612e15fe" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок вперед</span><div class="indented"></div></li></ul><ul id="4116a368-15f4-4e39-b654-67f57043e82e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок назад</span><div class="indented"></div></li></ul><ul id="cb939030-f9ce-4c69-8ec6-50d4eebc03b1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">спина 180 спина</span><div class="indented"></div></li></ul><ul id="6202726d-39ac-46a5-9831-4f5b11b0817e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Спина 360 спина</span><div class="indented"></div></li></ul><ul id="82579de9-c81d-4de7-8fe1-88437dd43434" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">360 спина</span><div class="indented"></div></li></ul><ul id="5cdec8dd-2d51-4dff-b8f9-2cc3807ac0dd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">360 живот</span><div class="indented"></div></li></ul><ul id="03122685-17df-47c9-ada8-5c2075fe228e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок падение на живот</span><div class="indented"></div></li></ul><ul id="f888aa15-3b15-49a8-95c6-1dab6b20e935" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок назад на спину</span><div class="indented"></div></li></ul><ul id="e1162435-daef-43c3-87eb-708c226a8e81" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок назад на живот</span><div class="indented"></div></li></ul><p id="551fe7e2-f52f-40d7-80f5-6804809f0ac4" class="">
+</p><p id="222bfb0b-ea7c-4f82-9ae7-160b81d8f3a7" class="">
+</p></div></div></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="af06ed08-21a4-4123-8dd1-5b970200e287"><div style="font-size:1.5em"><span class="icon">1️⃣</span></div><div style="width:100%"><span style="border-bottom:0.05em solid"><em><strong>3 уровень</strong></em></span><div id="b4230e45-1f59-4d90-ba6b-4d844fbcfa41" class="column-list"><div id="23330a6f-dc70-4857-afb0-8fd790b0b6f2" style="width:100%" class="column"><ul id="630d9d65-be12-491f-94c2-8c36eb560cc3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">1.5 сальто вперед</span><div class="indented"></div></li></ul><ul id="52e13944-78a4-4f37-9a07-e5e0b04b1680" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад на 360</span><div class="indented"></div></li></ul><ul id="7208122f-5b1b-43e0-91b3-bc61dfa17229" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед на 360</span><div class="indented"></div></li></ul><ul id="9dba1d6f-ce81-4de5-b4b6-b2f7305ea245" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">винт в кувырок</span><div class="indented"></div></li></ul><ul id="59b1633e-3095-40a8-bcc0-50cb0dca2c9b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Затяжное сальто назад </span><div class="indented"></div></li></ul><ul id="3b1843e9-6b84-41aa-9eae-9d011af2510d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Затяжное боковое сальто </span><div class="indented"></div></li></ul><ul id="636db263-a50f-4bb1-9a5c-44f9cb64c3da" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Затяжное сальто вперед</span><div class="indented"></div></li></ul><ul id="ee9bab38-27d4-4d45-900a-992c58be31dc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">фляк на батуте </span><div class="indented"></div></li></ul><ul id="f95ce6fa-2740-4e9a-9bc9-783d6efc29c9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кульбит</span><div class="indented"></div></li></ul></div><div id="aa33408d-695e-4212-9a2b-d5a0ef02b61b" style="width:100%" class="column"><ul id="e094e661-5fd8-4c92-8bad-06f67db0336f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">пол винта в живот </span><div class="indented"></div></li></ul><ul id="96ea5ccf-4de6-467c-ab38-c091668c313c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад в живот на 180</span><div class="indented"></div></li></ul><ul id="b3758818-f59a-469c-bb62-f474bb272675" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">кувырок вперед на 180 в живот</span><div class="indented"></div></li></ul><ul id="31581241-128e-4f99-b14e-922111aa1eff" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад с живота</span><div class="indented"></div></li></ul><ul id="3ff8006b-c7d1-46ad-b2ca-26bc7735f54b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">полтора кувырка вперед</span><div class="indented"></div></li></ul><ul id="1a79f078-b572-4fb8-afbc-e2fb824a1e59" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">спина 720</span><div class="indented"></div></li></ul><ul id="de6689c0-744b-4b59-b502-938698c0dfb9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">двойное сальто вперед</span><div class="indented"></div></li></ul><p id="4efb3106-7809-48c6-ad4a-504339660599" class="">
+</p><p id="39321698-3a59-47d7-83bb-a4ca8c720bf6" class="">
+</p></div></div><p id="f1862405-b7e1-40c0-8d7f-812ccdd047f3" class="">
+</p></div></figure></div><div id="8c1acb82-cb19-42ff-9c19-6a1d14b96397" style="width:53.33333333333334%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e582ca3f-9d9e-4026-9b70-4f46cd71e20f"><div style="font-size:1.5em"><span class="icon">1️⃣</span></div><div style="width:100%"><em><span style="border-bottom:0.05em solid"><strong>2 уровень</strong></span></em><div id="eae34169-5fdb-4a9d-b4d9-aeb885f59646" class="column-list"><div id="ec1a7195-4012-4a13-8a17-72e68b410ab2" style="width:100%" class="column"><ul id="0940fcdc-eeee-4f7e-845e-4e2ee2f55c7e" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед</span><div class="indented"></div></li></ul><ul id="a247e05c-64bc-4429-a9e6-fceb32730055" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад</span><div class="indented"></div></li></ul><ul id="5708ef2e-566f-4a3e-8f32-7b41a6aaa5bb" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">боковое сальто</span><div class="indented"></div></li></ul><ul id="d16467d5-2022-43a2-a2d0-520c40ec4d9d" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">“рванное” сальто назад</span><div class="indented"></div></li></ul><ul id="b8e75889-d13b-4c34-bc5f-3dc7c6a85aef" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад прогнувшись</span><div class="indented"></div></li></ul><ul id="71dfa576-dbee-4086-a6e7-a4027aa60d0a" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед прогнувшись </span><div class="indented"></div></li></ul><ul id="ab1d47a4-2cba-437a-ada4-14007eed1e53" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">рваное сальто вперед</span><div class="indented"></div></li></ul><ul id="a1685600-0ca6-4972-bd8d-8ff6906c604e" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед углом</span><div class="indented"></div></li></ul><ul id="2e062fe9-58e8-48f1-b0bb-f6470ed18376" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед на 180</span><div class="indented"></div></li></ul><ul id="8170462a-6fd1-4d9a-9a93-7a2404aac076" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад углом</span><div class="indented"></div></li></ul></div><div id="76003296-99a1-4b6a-8e88-f23a7881896c" style="width:100%" class="column"><ul id="421e33ec-0155-4edf-8d2f-af158bd28e1d" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад с поворотом на 180</span><div class="indented"></div></li></ul><ul id="e228d51f-46ac-448b-ae0d-99922594bd39" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">твист</span><div class="indented"></div></li></ul><ul id="b5a5ed38-8313-4e11-a8fb-89e59409484e" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">1.5 сальто назад</span><div class="indented"></div></li></ul><ul id="22ecd6da-019c-4cc1-a01d-4dd6b09471b4" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед на живот</span><div class="indented"></div></li></ul><ul id="dbe8d791-1d45-423e-98d4-dc492b327d83" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад на живот</span><div class="indented"></div></li></ul><ul id="5be1125f-358b-4b51-b85c-88c15c995881" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">спина 540 спина</span><div class="indented"></div></li></ul><ul id="e2668571-9d35-491a-a398-f35a4165ff84" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">живот 360 живот</span><div class="indented"></div></li></ul><ul id="03509d61-59af-4a72-be9a-ce9e6a87fc64" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">подбив вперед</span><div class="indented"></div></li></ul><ul id="03417b2e-caa9-4a1f-9b7c-e7eccdec76be" class="block-color-gray_background to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">подбив назад</span><div class="indented"></div></li></ul><p id="1c2f11ae-1628-466c-a290-6b1e73a0d6dc" class="">
+</p></div></div></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a57eb286-b3bc-4ae3-9088-9049a18bae46"><div style="font-size:1.5em"><span class="icon">1️⃣</span></div><div style="width:100%"><span style="border-bottom:0.05em solid"><em><strong>4 уровень</strong></em></span><ul id="96e1998d-5d28-4069-95ba-c7b164988335" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто вперед на 540</span><div class="indented"></div></li></ul><ul id="c33f71ab-8803-4db9-8499-8feae66c31df" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">сальто назад на 720</span><div class="indented"></div></li></ul><ul id="3feef6e1-da20-4984-b05c-18f3d9272bc6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">двойной кувырок</span><div class="indented"></div></li></ul><ul id="7d80b2b3-f00f-43b7-bb20-b1e671255616" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Поздний винт</span><div class="indented"></div></li></ul><ul id="ee6e266c-3bbe-4136-bd5a-dc8ff010eaf1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">полтора сальто с кувырка на 180</span><div class="indented"></div></li></ul><ul id="05d2ceaf-9426-4438-b219-4cdeecd1668a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">двойное сальто назад</span><div class="indented"></div></li></ul><ul id="f2969511-07ef-4276-bc14-0f49bcbd9bd0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">двойное боковое</span><div class="indented"></div></li></ul></div></figure><p id="095fcaa7-cb0b-4a2e-9f91-9bddd5bbbcad" class="">
+</p><div><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="6f3d0488-cd67-429d-a6c8-a38554afbcef"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">После прохождения этих уровней, база заложена и далее будет видно в каком направлении двигаться и на чем акцентировать внимание</div></figure><p id="e67e9828-7559-44b5-8054-81e6fe156c60" class=""><em>Дело в том что акробатика </em><span style="border-bottom:0.05em solid"><strong><em>очень</em></strong></span><em> вариативна</em></p><p id="27330667-5e69-488b-aed0-cf98cf6f2814" class=""><em>И я считаю что далее развивать нужно то что тебе </em><strong><span style="border-bottom:0.05em solid"><em>интересно</em></span></strong><em>, свой стиль))</em></p></div><p id="74873108-0730-415f-94f1-ace0d553e77b" class="">
+</p><p id="0b22afdf-6a3e-43bb-9c91-83dee00c7221" class="">
+</p></div></div></div></details><div id="7aa75766-d8c0-447d-8351-3a5e06f75496" class="column-list"><div id="ea72b42b-9ffd-4c80-afe2-73d027a41d44" style="width:50%" class="column"><h1 id="8b852e5c-6185-49ba-8445-75322900da55" class="block-color-default">Абонементы</h1><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="8552a2f1-ae2e-49a0-b89d-13ae9903ae09"><div style="font-size:1.5em"><span class="icon">☄️</span></div><div style="width:100%"><mark class="highlight-gray_background">У нас есть гибкая система абонементов что бы каждый желающий нашел для себя удобный вариант.</mark><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="304cc17b-1a1c-4e65-9225-9ec87517d880"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/link_lightgray.svg"/></div><div style="width:100%"><em><strong><a href="https://merkyrial.github.io/aboniments/aboniment.html">Всего у нас есть три варианта абонементов: 12 посещений, 8 посещений и 4 посещения. (merkyrial.github.io)</a></strong></em></div></figure></div></figure><p id="eafba38f-7392-4f95-a4f8-4445709d4bd7" class="">
+</p><p id="edb64b39-e571-4fc4-83cd-c95a4da9fe81" class="">
+</p><p id="fb7d9baf-c25f-4325-b454-fea3972c2cd8" class="">
+</p><p id="a72aab1b-5345-42a8-bff3-1abed443056f" class="">
+</p><h2 id="80bdc2fb-76b9-413c-a78b-c1f290188e25" class="">Контакты</h2><hr id="6ce30c2f-621b-4d99-8d2e-89337e6909ea"/><figure id="fcc09363-c59d-480a-acab-f40884cfef96"><a href="https://t.me/Merkyrial" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Merkyrial ..</div><div class="bookmark-description">You can contact @Merkyrial right away.</div></div><div class="bookmark-href"><img src="https://telegram.org/img/apple-touch-icon.png" class="icon bookmark-icon"/>https://t.me/Merkyrial</div></div><img src="https://cdn4.cdn-telegram.org/file/m4c-mQt3Jfe0gWfzKS7QL5sTSoxiyXGz7wADRF1y8qPrrfweiPWbKMJs0AC7WazXsbsrc9za4XELgN-z23wedoqfEIDeHG-Z3dLoT38_Fj1cqg9uE_sUaUS_oS40iH5Iq11JHU_3q0rI_2kSYmjRCWyIwmO8-ZSdigf4Rxt286cleQJKOsqvzZyoB0jL1xj3MIA7RAArU0Jsr-LQmM5gUm7CrmD8Yjxr01CwL8-2X4IEu4HKvURCR86ZzbkGlf3RjccPXbzOk_a1B0JuAoKfmH1uom1Y7TrfzZ4IPS5hon0sjK--xok6lBvObHWqPYk0rhCmTkAbG9n9ThyPyU6iFw.jpg" class="bookmark-image"/></a></figure><h3 id="80e21480-f4b3-4820-b0b5-813d8bf17698" class=""><em><strong>Сделайте шаг к активному образу жизни и присоединяйтесь к нашим тренировкам уже сегодня!</strong></em></h3><p id="3455616a-6e0d-41ec-8dc7-5e92aacdff35" class="">
+</p></div><div id="e2a374ba-f1c2-46bc-9410-c7e7c3abcdb0" style="width:50%" class="column"><h1 id="f63ad1dc-2f6f-4f2d-b6cd-abe7bcb80727" class="">Тренировки без абонемента</h1><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1398aebc-9831-4758-8b6b-af98158e54d9"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%">Мы всегда рады принять новых клиентов и предоставить им возможность насладиться тренировками на батуте.<p id="12818e16-f346-48a6-bf24-6ecf92c27a66" class="">Если вы не хотите приобретать абонемент, вы все равно можете записаться на тренировки в нашем батутном центре! Просто свяжитесь с нами для уточнения расписания и доступности мест. </p><figure class="callout" style="white-space:pre-wrap;display:flex" id="708e2841-b9b3-4e6b-9e41-527d0a0adfa2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Цена одной тренировки: </strong>450 рублей</div></figure></div></figure><p id="7b0d6489-9b69-4246-a29e-e5fbe7c9ff9e" class="">
+</p></div></div><div id="e94ea830-ed38-4f7e-9137-5b4ae08ed2b2" class="column-list"><div id="f01a833a-12c7-45a9-b154-49e901671692" style="width:50%" class="column"><p id="44195340-2e1d-4254-96d5-c3e1acb87a76" class="">
+</p></div><div id="849a92d3-6576-4a97-b436-13fd660f2eb7" style="width:50%" class="column"><p id="b4d77942-fd77-4ef1-a87a-15e4b5239e32" class="">
+</p></div></div><p id="34701fc9-e7d0-46fd-acce-0b92b64c0ca3" class="">
+</p><p id="33307cb8-794e-496a-be10-86ab73374436" class="block-color-default">
+</p><p id="42f8e48c-d248-421c-889f-20144a890415" class="">
+</p><p id="2c6c78de-d5cc-4a8d-ab04-733b7c215e66" class="block-color-default">
+</p><div id="6f10fc21-3fa3-4882-8c27-88d388d90d47" class="column-list"><div id="5534a0b1-4cca-47bc-89cc-7775d3ef92e4" style="width:50.000000000000014%" class="column"><p id="d3e7bfaa-9c06-4061-a8c2-b76e0f7e03d6" class="">
+</p></div><div id="33741e56-f404-4975-a8c8-9aa8319eb6b3" style="width:50%" class="column"><p id="eb5d7c46-46a0-4956-b82d-d8fa4fb1539d" class="">
+</p></div></div><p id="b0eb1928-61b0-4c54-a765-b1ef3b0e1776" class="">
+</p><p id="f67c6991-205a-49cb-ac30-8c7513f154df" class="">
+</p><p id="bf970414-0ba3-4d69-a11d-74c940a22312" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"><hr/><details open="" style="padding-top:1em"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Resolved inline comments</summary><div class="indented"><div><p style="padding:0.2em"><b>Block text</b>: <mark class="highlight-yellow_background">Абонементы</mark></p><ul class="toggle"><li><div><span class="user" style="padding:0.2em"><span class="icon text-icon user-icon"><span class="user-icon-inner">M</span></span><span><b>Merkyrial</b> <time style="font-size:0.8em">Dec 28, 2023, 2:06 PM</time></span></span></div><div style="padding:0.2em"><mark class="highlight-gray">Мы предлагаем абонементы с разным количеством посещений, чтобы удовлетворить потребности каждого клиента @</mark></div><div style="padding:0.3em"></div></li></ul></div><hr/></div><div class="indented"><div><p style="padding:0.2em"><b>Block text</b>: <mark class="highlight-yellow_background">Абонементы</mark></p><ul class="toggle"><li><div><span class="user" style="padding:0.2em"><span class="icon text-icon user-icon"><span class="user-icon-inner">M</span></span><span><b>Merkyrial</b> <time style="font-size:0.8em">Dec 28, 2023, 2:07 PM</time></span></span></div><div style="padding:0.2em"><mark class="highlight-gray">Мы предлагаем абонементы с разным количеством посещений, чтобы удовлетворить потребности каждого клиента</mark></div><div style="padding:0.3em"></div></li></ul></div><hr/></div></details></span></body></html>
